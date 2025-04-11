@@ -135,9 +135,7 @@ public class TeacherServiceImpl implements ITeacherService {
                     .map(Mapper::mapTeacherToReadOnlyDTO)
                     .flatMap(Optional::stream)
                     .collect(Collectors.toList());
-//            return teachers.stream()
-//                    .map(teacher -> Mapper.mapTeacherToReadOnlyDTO(teacher).orElse(null))
-//                    .collect(Collectors.toList());
+
         } catch (TeacherDAOException e) {
             // e.printStackTrace();
             throw e;

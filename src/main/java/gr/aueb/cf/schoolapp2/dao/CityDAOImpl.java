@@ -22,10 +22,10 @@ public class CityDAOImpl implements ICityDAO {
              PreparedStatement ps = conn.prepareStatement(sql);
              ResultSet rs = ps.executeQuery()) {
             while (rs.next()) {
-                int id = rs.getInt("id"); // Get the id column
-                String name = rs.getString("name"); // Get the name column
+                int id = rs.getInt("id");
+                String name = rs.getString("name");
 
-                // Create a City object and add it to the list
+
                 City city = new City(id, name);
                 cities.add(city);
             }

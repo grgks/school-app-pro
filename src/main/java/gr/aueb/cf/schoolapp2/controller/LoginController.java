@@ -52,30 +52,26 @@ public class  LoginController extends HttpServlet {
             }
 
             HttpSession oldSession = request.getSession(false);
-            // no session exists before
-            // we explicitly create a session with getSession(true)
-            // that is that tomcat creates a jsessionid, but does not store it to backend
-            // session object. it is just a placeholder. to create a session object and
-            // thus create state at backend you have to call getSession(true) or getSession()
+
             if (oldSession != null) {
-                oldSession.invalidate(); // Destroy attacker's session
+                oldSession.invalidate();
             }
-            HttpSession session = request.getSession(true);  // Create new one for address fixation attack
+            HttpSession session = request.getSession(true);
             session.setAttribute("authenticated", true);
             session.setAttribute("username", username);
             session.setAttribute("role", userService.getUserByUsername(username).getRoleType().name());
 
-            if (session.getAttribute("role").equals("ADMIN")) { // overwrites web.xml
-                session.setMaxInactiveInterval(ADMIN_TIMEOUT);  // Admin get 30-min sessions
+            if (session.getAttribute("role").equals("ADMIN")) {
+                session.setMaxInactiveInterval(ADMIN_TIMEOUT);
             }
-             //post-redirect-get design pattern(PRG)
+             //(PRG)
             response.sendRedirect(request.getContextPath() + "/school-app/dashboard");
 
 
-//                response.sendRedirect(request.getContextPath() + "/login?isError=true");
+
 
         } catch (UserDAOException | UserNotFoundException e) {
-            //response.sendRedirect(request.getContextPath() + "/login?isError=true");
+
             request.setAttribute("error", "Authentication Error");
             request.getRequestDispatcher("/WEB-INF/jsp/login.jsp").forward(request, response);
         }

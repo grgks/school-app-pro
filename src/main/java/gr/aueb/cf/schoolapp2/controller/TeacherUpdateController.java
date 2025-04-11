@@ -118,8 +118,7 @@ public class TeacherUpdateController extends HttpServlet {
                 req.getSession().setAttribute("fathernameMessage", fathernameMessage);
                 req.getSession().setAttribute("phoneNumMessage", phoneNumMessage);
                 req.getSession().setAttribute("updateDTO", updateDTO);
-//                req.getRequestDispatcher("/WEB-INF/jsp/teacher-update.jsp")
-//                        .forward(req, resp);
+
                 resp.sendRedirect(req.getContextPath() + "/school-app/teachers/update?id=" + id);
                 return;
             }
@@ -131,57 +130,12 @@ public class TeacherUpdateController extends HttpServlet {
             session.setAttribute("teacherInfo", readOnlyDTO);
             // PRG Pattern
             resp.sendRedirect(req.getContextPath() + "/school-app/teacher-updated");
-//            req.getRequestDispatcher("/WEB-INF/jsp/teacher-inserted.jsp")
-//                    .forward(req, resp);
+
         } catch (TeacherDAOException | TeacherAlreadyExistsException | TeacherNotFoundException e) {
             errorMessage = e.getMessage();
             req.setAttribute("errorMessage", errorMessage);
             req.getRequestDispatcher("/WEB-INF/jsp/teacher-insert.jsp")
                     .forward(req, resp);
         }
-
-//        Integer id = Integer.parseInt(req.getParameter("id").trim());
-//        String firstname = req.getParameter("firstname").trim();
-//        String lastname = req.getParameter("lastname").trim();
-//
-//        TeacherUpdateDTO updateDTO = new TeacherUpdateDTO(id, firstname, lastname);
-//        Map<String, String> errors;
-//        String firstnameMessage;
-//        String lastnameMessage;
-//        String errorMessage;
-//        Teacher teacher;
-//
-//        try {
-//            // Validate dto
-//            errors = TeacherValidator.validate(updateDTO);
-//
-//            if (!errors.isEmpty()) {
-//                firstnameMessage = errors.getOrDefault("firstname", "");
-//                lastnameMessage = errors.getOrDefault("lastname", "");
-//
-//                req.setAttribute("firstnameMessage", firstnameMessage);
-//                req.setAttribute("lastnameMessage", lastnameMessage);
-//                req.setAttribute("updateDTO", updateDTO);
-//                req.getRequestDispatcher("/WEB-INF/jsp/teacher-update.jsp")
-//                        .forward(req, resp);
-//                return;
-//            }
-//
-//            // Call the service
-//            teacher = teacherService.updateTeacher(updateDTO);
-//            TeacherReadOnlyDTO readOnlyDTO = mapToReadOnlyDTO(teacher);
-//            req.setAttribute("teacherInfo", readOnlyDTO);
-//            req.getRequestDispatcher("/WEB-INF/jsp/teacher-updated.jsp")
-//                    .forward(req, resp);
-//        } catch (TeacherNotFoundException | TeacherDAOException e) {
-//            errorMessage = e.getMessage();
-//            req.setAttribute("errorMessage", errorMessage);
-//            req.getRequestDispatcher("/WEB-INF/jsp/teacher-update.jsp")
-//                    .forward(req, resp);
-//        }
     }
-
-//    private TeacherReadOnlyDTO mapToReadOnlyDTO(Teacher teacher) {
-//        return new TeacherReadOnlyDTO(teacher.getId(), teacher.getFirstname(), teacher.getLastname());
-//    }
 }

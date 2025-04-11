@@ -11,9 +11,7 @@ import java.util.List;
 
 public class DBHelper {
 
-    /**
-     * No instances of this class should be available.
-     */
+
     private DBHelper() {
 
     }

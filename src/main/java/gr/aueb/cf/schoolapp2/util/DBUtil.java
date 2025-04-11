@@ -13,21 +13,12 @@ public class DBUtil {
     static {
         ds.setUrl("jdbc:mysql://localhost:3306/schooldb7staging?serverTimeZone=UTC");
         ds.setUsername("user7staging");
-
-        //ds.setPassword(System.getenv("PASS_USER7")); need to set env variable
         ds.setPassword("12345");
-
-        // Το Maven automatically detects the driver, no need for the following
-        // ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
-
         ds.setInitialSize(10);
         ds.setMinIdle(10);
         ds.setMaxIdle(15);
     }
 
-    /**
-     * No instances of this class should be available
-     */
     private DBUtil() {
 
     }

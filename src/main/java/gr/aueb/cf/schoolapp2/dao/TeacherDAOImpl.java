@@ -73,7 +73,6 @@ public class TeacherDAOImpl implements ITeacherDAO {
             ps.setString(8, teacher.getStreetNum());
             ps.setString(9, teacher.getZipCode());
             ps.setInt(10, teacher.getCityId());
-//            ps.setTimestamp(11, Timestamp.valueOf(teacher.getUpdatedAt()));
             ps.setTimestamp(11, Timestamp.valueOf(LocalDateTime.now()));
             ps.setInt(12, teacher.getId());
 

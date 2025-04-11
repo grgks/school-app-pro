@@ -51,15 +51,15 @@ public class TeacherInsertController extends HttpServlet {
                     .forward(req, resp);
         }
         req.setAttribute("cities", cities);
-        //req.getSession().setAttribute("insertDTO", teacherInsertDTO);
+
         if (req.getSession().getAttribute("insertDTO") != null) {
             // Move from session to request scope for JSP
             req.setAttribute("insertDTO", req.getSession().getAttribute("insertDTO"));
-            //req.setAttribute("errors", req.getSession().getAttribute("errors"));
+
 
             // Clear session data (so it doesn't persist after refresh)
             req.getSession().removeAttribute("insertDTO");
-            //req.getSession().removeAttribute("errors");
+
         }
         req.getRequestDispatcher("/WEB-INF/jsp/teacher-insert.jsp").forward(req, resp);
     }
@@ -114,8 +114,7 @@ public class TeacherInsertController extends HttpServlet {
                 req.getSession().setAttribute("fathernameMessage", fathernameMessage);
                 req.getSession().setAttribute("phoneNumMessage", phoneNumMessage);
                 req.getSession().setAttribute("insertDTO", insertDTO);
-//                req.getRequestDispatcher("/WEB-INF/jsp/teacher-insert.jsp")
-//                        .forward(req, resp);
+
                 resp.sendRedirect(req.getContextPath() + "/school-app/teachers/insert");
                 return;
             }
@@ -127,8 +126,7 @@ public class TeacherInsertController extends HttpServlet {
             session.setAttribute("teacherInfo", readOnlyDTO);
             // PRG Pattern
             resp.sendRedirect(req.getContextPath() + "/school-app/teacher-inserted");
-//            req.getRequestDispatcher("/WEB-INF/jsp/teacher-inserted.jsp")
-//                    .forward(req, resp);
+
         } catch (TeacherDAOException | TeacherAlreadyExistsException e) {
             errorMessage = e.getMessage();
             req.setAttribute("errorMessage", errorMessage);
