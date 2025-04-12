@@ -13,11 +13,11 @@ import gr.aueb.cf.schoolapp2.model.Student;
 
 import java.util.List;
 
-public class StudentsServiceImpl implements IStudentService {
+public class StudentServiceImpl implements IStudentService {
 
     private final IStudentDAO studentDAO;
 
-    public StudentsServiceImpl(IStudentDAO studentDAO) {
+    public StudentServiceImpl(IStudentDAO studentDAO) {
         this.studentDAO = studentDAO;
     }
 

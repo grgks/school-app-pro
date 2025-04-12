@@ -10,8 +10,8 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Προβολή Καθηγητών</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/teachers.css">
+    <title>Προβολή Μαθητών</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/students.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -20,12 +20,12 @@
 
  <c:if test="${sessionScope.role == 'ADMIN'}">
     <div class="m-bottom">
-        <a href="${pageContext.request.contextPath}/school-app/teachers/insert">Εισαγωγή Καθηγητή</a>
+        <a href="${pageContext.request.contextPath}/school-app/students/insert">Εισαγωγή Μαθητή</a>
     </div>
  </c:if>
 
     <div class="form">
-        <form id="filterForm" method="GET" action="${pageContext.request.contextPath}/school-app/teachers/view">
+        <form id="filterForm" method="GET" action="${pageContext.request.contextPath}/school-app/students/view">
             <%--        <input type="text" name="filterId" placeholder="Enter ID" />--%>
             <input type="text" name="firstname" placeholder="Όνομα" />
             <input type="text" name="lastname" placeholder="Επώνυμο" />
@@ -41,13 +41,13 @@
             </tr>
         </thead>
 <%--        <p>${requestScope.message}</p>--%>
-        <c:forEach var = "teacher" items = "${requestScope.teachers}">
+        <c:forEach var = "student" items = "${requestScope.students}">
             <tr>
-                <td>${teacher.id}</td>
-                <td>${teacher.firstname}</td>
-                <td>${teacher.lastname}</td>
-                <td><a href="${pageContext.request.contextPath}/school-app/teachers/view?id=${teacher.id}"><i class="fa-regular fa-eye"></i></a><a href="${pageContext.request.contextPath}/school-app/teachers/update?id=${teacher.id}"><i class="fa-solid fa-pen-to-square"></i></a><a href="${pageContext.request.contextPath}/school-app/teachers/delete?id=${teacher.id}"
-                       onclick="return confirm('Are you sure you want to delete the teacher?')"><i class="fa-solid fa-trash-can"></i></a>
+                <td>${student.id}</td>
+                <td>${student.firstname}</td>
+                <td>${student.lastname}</td>
+                <td><a href="${pageContext.request.contextPath}/school-app/students/view?id=${student.id}"><i class="fa-regular fa-eye"></i></a><a href="${pageContext.request.contextPath}/school-app/students/update?id=${student.id}"><i class="fa-solid fa-pen-to-square"></i></a><a href="${pageContext.request.contextPath}/school-app/students/delete?id=${student.id}"
+                       onclick="return confirm('Are you sure you want to delete the student?')"><i class="fa-solid fa-trash-can"></i></a>
 
                 </td>
             </tr>
@@ -73,4 +73,4 @@
 
 </script>
 </body>
-</html>
+</html

@@ -67,9 +67,9 @@
     <div class="card m-e-1" style="width: 17rem;">
       <img src="${pageContext.request.contextPath}/img/cf-2.png" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">Προβολή Καθηγητών</h5>
-        <p class="card-text">Δες τη λίστα καθηγητών που είναι καταχωρημένοι στο σύστημα.</p>
-        <a href="<c:url value='${pageContext.request.contextPath}/school-app/teachers/view' />" class="btn btn-primary">Προβολή Καθηγητών</a>
+        <h5 class="card-title">Προβολή Mαθητών</h5>
+        <p class="card-text">Δες τη λίστα μαθητών που είναι καταχωρημένοι στο σύστημα.</p>
+        <a href="<c:url value='${pageContext.request.contextPath}/school-app/students/view' />" class="btn btn-primary">Προβολή Μαθητών</a>
       </div>
     </div>
 
@@ -91,16 +91,16 @@
   </div>
 </div>
 
-
-
-    <div class="card  m-e-1" style="width: 17rem;">
+ <div class="card  m-e-1" style="width: 17rem;">
       <img src="${pageContext.request.contextPath}/img/aueb_entrance.jpg" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">Εισαγωγή Καθηγητών</h5>
-        <p class="card-text">Πρόσθεσε νέους καθηγητές στην πλατφόρμα μέσω της φόρμας εισαγωγής.</p>
-        <a href="<c:url value='${pageContext.request.contextPath}/school-app/teachers/insert' />" class="btn btn-primary">Εισαγωγή Καθηγητών</a>
+        <h5 class="card-title">Προβολή Καθηγητών</h5>
+        <p class="card-text">Δες τη λίστα καθηγητών που είναι καταχωρημένοι στο σύστημα.</p>
+        <a href="<c:url value='${pageContext.request.contextPath}/school-app/teachers/view' />" class="btn btn-primary">Εισαγωγή Καθηγητών</a>
       </div>
     </div>
+
+
 
   </div>
 </div>
