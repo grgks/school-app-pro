@@ -12,7 +12,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/login.css">
+
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/footerdash.css">
 </head>
 <body>
 	<%@ include file="header.jsp"%>
@@ -29,7 +32,7 @@
                     </c:if>
                 </div>
                 <form method="POST" action="${pageContext.request.contextPath}/login">
-                    <div class="row">
+                    <div class="row ">
                         <input type="email" name="username" required placeholder="E-mail">
                         <span></span>
                     </div>
@@ -50,6 +53,11 @@
             </div>
         </div>
 
-    <%@include file="footer.jsp"%>
+    <footer>
+        <div class="footer">
+            <span>&copy; 2024 Coding Factory. All rights reserved.</span>
+        </div>
+    </footer>
+
 </body>
 </html>

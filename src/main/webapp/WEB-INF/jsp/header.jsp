@@ -17,8 +17,11 @@
 <%--            <span>${sessionScope.firstname}</span>--%>
 <%--            <span>${sessionScope.lastname</span>--%>
             <span>${sessionScope.username}</span>
+
             <c:if test="${sessionScope.username != null}">
-                <a class="log-out" href="${pageContext.request.contextPath}/logout">Έξοδος</a>
+                <form action="${pageContext.request.contextPath}/login" method="post" style="display: inline;">
+                        <button type="submit" class="btn btn-outline-warning">Έξοδος</button>
+                    </form>
             </c:if>
         </div>
     </div>
