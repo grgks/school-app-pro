@@ -71,7 +71,7 @@
 
 <%@ include file="footer.jsp"%>
 
-<script src="${pageContext.request.contextPath}/js/students.js"></script>
+<script src="${pageContext.request.contextPath}/js/teachers.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"  crossorigin="anonymous"></script>
 </body>
 </html>

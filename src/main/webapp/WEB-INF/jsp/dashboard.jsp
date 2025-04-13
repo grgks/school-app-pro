@@ -67,9 +67,9 @@
     <div class="card m-e-1" style="width: 17rem;">
       <img src="${pageContext.request.contextPath}/img/cf-2.png" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">Προβολή Mαθητών</h5>
-        <p class="card-text">Δες τη λίστα μαθητών που είναι καταχωρημένοι στο σύστημα.</p>
-        <a href="<c:url value='${pageContext.request.contextPath}/school-app/students/view' />" class="btn btn-primary">Προβολή Μαθητών</a>
+        <h5 class="card-title"></h5>
+        <p class="card-text  mb-5 mt-3">Δες τη λίστα μαθητών που είναι καταχωρημένοι στο σύστημα.</p>
+        <a href="<c:url value='${pageContext.request.contextPath}/school-app/students/view' />" class="btn btn-primary ">Προβολή Μαθητών</a>
       </div>
     </div>
 
@@ -80,10 +80,9 @@
   </div>
   <div class="card-body">
     <h5 class="card-title">Εξειδίκευση στην γνώση</h5>
-    <p class="card-text"><pre>loremshfkjdshfdskhfdsk
-    fhdskfhdskfhdshfdksj
-    hfkdsjfhdksjhfkdsjfhdskjfhkds
-    jfhdskjfhdskjfhdskjfhdskjfhdsk<pre></p>
+    <p class="card-text"><pre>με πρακτική εκπαίδευση
+     σε σύγχρονες τεχνολογίες προγραμματισμού,
+     διαμορφώνοντας τους προγραμματιστές του αύριο.<pre></p>
     <a href="https://codingfactory.aueb.gr" target="blank"class="btn btn-primary">Ελάτε μαζί μας</a>
   </div>
   <div class="card-footer text-body-secondary">
@@ -94,9 +93,9 @@
  <div class="card  m-e-1" style="width: 17rem;">
       <img src="${pageContext.request.contextPath}/img/aueb_entrance.jpg" class="card-img-top" alt="...">
       <div class="card-body">
-        <h5 class="card-title">Προβολή Καθηγητών</h5>
+        <h5 class="card-title"></h5>
         <p class="card-text">Δες τη λίστα καθηγητών που είναι καταχωρημένοι στο σύστημα.</p>
-        <a href="<c:url value='${pageContext.request.contextPath}/school-app/teachers/view' />" class="btn btn-primary">Εισαγωγή Καθηγητών</a>
+        <a href="<c:url value='${pageContext.request.contextPath}/school-app/teachers/view' />" class="btn btn-primary">Προβολή Καθηγητών</a>
       </div>
     </div>
 

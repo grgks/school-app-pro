@@ -241,33 +241,47 @@ public class StudentDAOImpl implements IStudentDAO{
     @Override
     public List<Student> getFilteredStudents(String firstname, String lastname) throws StudentDAOException {
         String sql = "SELECT * FROM students WHERE firstname LIKE ? AND lastname LIKE ?";
-        List<Student> students = new ArrayList<>(); // isEmpty == true
-        ResultSet rs;
-        Student student;
+        List<Student> students = new ArrayList<>();
 
         try (Connection connection = DBUtil.getConnection();
              PreparedStatement ps = connection.prepareStatement(sql)) {
 
-            ps.setString(1, firstname + "%");
-            ps.setString(2, lastname + "%");
-            rs = ps.executeQuery();
+            // wildcard %
+            String first = (firstname == null || firstname.trim().isEmpty()) ? "%" : firstname + "%";
+            String last = (lastname == null || lastname.trim().isEmpty()) ? "%" : lastname + "%";
 
-            while (rs.next()) {
-                student = new Student(rs.getInt("id"), rs.getString("firstname"), rs.getString("lastname"),
-                        rs.getString("vat"), rs.getString("fathername"), rs.getString("phone_num"), rs.getString("email"),
-                        rs.getString("street"), rs.getString("street_num"), rs.getString("zipcode"), rs.getInt("city_id"),
-                        rs.getString("uuid"), rs.getTimestamp("created_at").toLocalDateTime(),
-                        rs.getTimestamp("updated_at").toLocalDateTime());
-                students.add(student);
+            ps.setString(1, first);
+            ps.setString(2, last);
+
+            try (ResultSet rs = ps.executeQuery()) {
+                while (rs.next()) {
+                    Student student = new Student(
+                            rs.getInt("id"),
+                            rs.getString("firstname"),
+                            rs.getString("lastname"),
+                            rs.getString("vat"),
+                            rs.getString("fathername"),
+                            rs.getString("phone_num"),
+                            rs.getString("email"),
+                            rs.getString("street"),
+                            rs.getString("street_num"),
+                            rs.getString("zipcode"),
+                            rs.getInt("city_id"),
+                            rs.getString("uuid"),
+                            rs.getTimestamp("created_at").toLocalDateTime(),
+                            rs.getTimestamp("updated_at").toLocalDateTime()
+                    );
+                    students.add(student);
+                }
             }
-            // Logging
-            students.forEach(System.out::println);
+
             return students;
         } catch (SQLException e) {
             e.printStackTrace();
-            // logging
             throw new StudentDAOException("SQL error in filtered get");
         }
     }
-    }
+
+}
+
 

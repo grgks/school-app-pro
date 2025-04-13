@@ -10,8 +10,11 @@ import gr.aueb.cf.schoolapp2.exceptions.StudentDAOException;
 import gr.aueb.cf.schoolapp2.exceptions.StudentNotFoundException;
 import gr.aueb.cf.schoolapp2.mapper.Mapper;
 import gr.aueb.cf.schoolapp2.model.Student;
+import gr.aueb.cf.schoolapp2.model.Teacher;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class StudentServiceImpl implements IStudentService {
 
@@ -50,8 +53,31 @@ public class StudentServiceImpl implements IStudentService {
 
     @Override
     public StudentReadOnlyDTO updateStudent(Integer id, StudentUpdateDTO dto) throws StudentDAOException, StudentAlreadyExistsException, StudentNotFoundException {
-        return null;
-    }
+
+            Student student;
+            Student fetchedStudent;
+
+            try {
+                if (studentDAO.getById(id) == null)
+                    throw new StudentNotFoundException("Student with id " + id + " was not found");
+
+
+                fetchedStudent = studentDAO.getStudentByVat(dto.getVat());
+                if (fetchedStudent != null && !fetchedStudent.getId().equals(dto.getId())) {
+                    throw new StudentAlreadyExistsException("Student with id: " + dto.getId() + " already exists");
+                }
+                student = Mapper.mapStudentUpdateToModel(dto);
+                Student updatedStudent = studentDAO.update(student);
+                // logging
+                return Mapper.mapStudentToReadOnlyDTO(updatedStudent).orElse(null);
+            } catch (StudentDAOException | StudentNotFoundException e) {
+                //e.printStackTrace();
+                // logging
+                // rollback
+                throw e;
+            }
+        }
+
 
     @Override
     public void deleteStudent(Integer id) throws StudentDAOException, StudentNotFoundException {
@@ -75,6 +101,19 @@ public class StudentServiceImpl implements IStudentService {
 
     @Override
     public List<StudentReadOnlyDTO> getFilteredStudents(FiltersDTO filters) throws StudentDAOException {
-        return List.of();
+        List<Student> students;
+
+        try {
+            students = studentDAO.getFilteredStudents(filters.getFirstname(), filters.getLastname());
+            return students.stream()
+                    .map(Mapper::mapStudentToReadOnlyDTO)
+                    .flatMap(Optional::stream)
+                    .collect(Collectors.toList());
+        } catch (StudentDAOException e) {
+            e.printStackTrace();
+            // logging
+            // rollback
+            throw e;
+        }
     }
 }

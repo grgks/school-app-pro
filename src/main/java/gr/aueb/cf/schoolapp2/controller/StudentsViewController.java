@@ -24,6 +24,8 @@ public class StudentsViewController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+
         List<StudentReadOnlyDTO> studentReadOnlyDTOS;
         String filterFirstname = request.getParameter("firstname");
         filterFirstname = filterFirstname == null ? "" : filterFirstname;
@@ -45,7 +47,7 @@ public class StudentsViewController extends HttpServlet {
             }
 
             request.setAttribute("students", studentReadOnlyDTOS);
-            request.getRequestDispatcher("/WEB-INF/jsp/teachers.jsp").forward(request, response);
+            request.getRequestDispatcher("/WEB-INF/jsp/students.jsp").forward(request, response);
         } catch (StudentDAOException e) {
             message = e.getMessage();
             request.setAttribute("message", message);
