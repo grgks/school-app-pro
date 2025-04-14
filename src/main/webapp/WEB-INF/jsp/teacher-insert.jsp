@@ -9,10 +9,9 @@
 <html>
 <head>
     <title>Εισαγωγή Καθηγητή</title>
-
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/teacher-insert.css">
 </head>
-<body class="bgc">
+<body class="">
 <%@ include file="header.jsp"%>
 <div class="main-content">
 

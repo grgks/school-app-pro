@@ -82,21 +82,66 @@ public class StudentServiceImpl implements IStudentService {
     @Override
     public void deleteStudent(Integer id) throws StudentDAOException, StudentNotFoundException {
 
+
+            try {
+                if (studentDAO.getById(id) == null) {
+                    throw new StudentNotFoundException("Student not found");
+                }
+                studentDAO.delete(id);
+            } catch (StudentDAOException | StudentNotFoundException e) {
+                // e.printStackTrace();
+                // rollback
+                throw e;
+            }
     }
 
     @Override
     public StudentReadOnlyDTO getStudentById(Integer id) throws StudentDAOException, StudentNotFoundException {
-        return null;
+        Student student;
+
+        try {
+            student = studentDAO.getById(id);
+            return Mapper.mapStudentToReadOnlyDTO(student).orElseThrow(() ->
+                    new StudentNotFoundException("Student not found in get student by id"));
+        } catch (StudentNotFoundException | StudentDAOException e) {
+            //e.printStackTrace();
+            // rollback
+            throw e;
+        }
     }
 
     @Override
     public List<StudentReadOnlyDTO> getAllStudents() throws StudentDAOException {
-        return List.of();
+        List<Student> students;
+
+        try {
+            students = studentDAO.getAll();
+            return students.stream()
+                    .map(Mapper::mapStudentToReadOnlyDTO)
+                    .flatMap(Optional::stream)
+                    .collect(Collectors.toList());
+        } catch (StudentDAOException e) {
+            // e.printStackTrace();
+            throw e;
+        }
     }
 
     @Override
     public List<StudentReadOnlyDTO> getStudentsByLastname(String lastname) throws StudentDAOException {
-        return List.of();
+        List<Student> students;
+
+        try {
+            students = studentDAO.getByLastname(lastname);
+
+            return students.stream()
+                    .map(Mapper::mapStudentToReadOnlyDTO)
+                    .flatMap(Optional::stream)
+                    .collect(Collectors.toList());
+
+        } catch (StudentDAOException e) {
+            // e.printStackTrace();
+            throw e;
+        }
     }
 
     @Override

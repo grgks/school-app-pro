@@ -17,12 +17,14 @@ student<%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
        </head>
        <body>
        <%@ include file="header.jsp"%>
-       <div class="main-content">
+       <div class="main-content mb-5">
 
         <c:if test="${sessionScope.role == 'ADMIN'}">
            <div class="m-bottom">
-               <a href="${pageContext.request.contextPath}/school-app/students/insert">Εισαγωγή Μαθητή</a>
-           </div>
+                   <form action="${pageContext.request.contextPath}/school-app/students/insert" method="post" style="display: inline;">
+                    <button type="submit" class="btn btn-outline-warning">Εισαγωγή Μαθητή</button>
+                                   </form>
+                                   </div>
         </c:if>
 
            <div class="form">

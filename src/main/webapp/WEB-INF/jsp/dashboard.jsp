@@ -44,10 +44,10 @@
                         Menu
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Εισαγωγή Καθηγητή</a></li>
-                        <li><a class="dropdown-item" href="#">Προβολή Καθηγητή</a></li>
+                        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/school-app/teachers/insert">Εισαγωγή Καθηγητή</a></li>
+                        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/school-app/teachers/view">Προβολή Καθηγητών</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Κάτι άλλο</a></li>
+                        <li><a class="dropdown-item" href="${pageContext.request.contextPath}/school-app/students/view">Προβολή Μαθητών</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
