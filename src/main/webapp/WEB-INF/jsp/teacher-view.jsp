@@ -12,7 +12,8 @@
         body { font-family: Arial; padding: 20px; }
         .info { margin-bottom: 10px; }
     </style>
-</head>
+</head
+>
 <body>
     <h2>Στοιχεία Καθηγητή</h2>
 
@@ -24,7 +25,7 @@
     <div class="info"><strong>Email:</strong> ${teacher.email}</div>
     <div class="info"><strong>Οδός:</strong> ${teacher.street} ${teacher.streetNum}</div>
     <div class="info"><strong>ΤΚ:</strong> ${teacher.zipCode}</div>
-    <div class="info"><strong>Πόλη:</strong> ${teacher.cityName}</div>
+
 
 </body>
 </html>
