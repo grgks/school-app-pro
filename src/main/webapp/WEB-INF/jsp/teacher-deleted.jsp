@@ -17,6 +17,7 @@
 <div class="success m-bottom">
     <h1>Επιτυχής Διαγραφή</h1>
     <p>Κωδικός: ${requestScope.id}</p>
+
 </div>
 
 <div>
