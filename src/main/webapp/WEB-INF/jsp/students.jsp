@@ -49,9 +49,13 @@ student<%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
                        <td>${student.id}</td>
                        <td>${student.firstname}</td>
                        <td>${student.lastname}</td>
-                       <td><a href="${pageContext.request.contextPath}/school-app/students/view?id=${student.id}"><i class="fa-regular fa-eye"></i></a><a href="${pageContext.request.contextPath}/school-app/students/update?id=${student.id}"><i class="fa-solid fa-pen-to-square"></i></a><a href="${pageContext.request.contextPath}/school-app/students/delete?id=${student.id}"
-                              onclick="return confirm('Are you sure you want to delete the student?')"><i class="fa-solid fa-trash-can"></i></a>
-
+                       <td><a href="${pageContext.request.contextPath}/school-app/student-details?id=${student.id}">
+                                             <i class="fa-regular fa-eye"></i></a>
+                                             <a href="${pageContext.request.contextPath}/school-app/students/update?id=${student.id}">
+                                             <i class="fa-solid fa-pen-to-square">
+                                             </i></a><a href="${pageContext.request.contextPath}/school-app/students/delete?id=${student.id}"
+                                                    onclick="return confirm('Are you sure you want to delete the student?')">
+                                                    <i class="fa-solid fa-trash-can"></i></a>
                        </td>
                    </tr>
                </c:forEach>

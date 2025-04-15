@@ -9,16 +9,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Στοιχεία Καθηγητή</title>
+    <title>Στοιχεία Μαθητή</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
     <%@ include file="header.jsp"%>
 
     <div class="container mt-5">
-        <h2>Στοιχεία Καθηγητή</h2>
+        <h2>Στοιχεία Μαθητή</h2>
 
-        <!-- Ξεκινάει ο πίνακας -->
+
         <table class="table table-bordered table-striped mt-4">
             <thead class="thead-dark">
                 <tr>
@@ -28,41 +28,41 @@
             <tbody>
                 <tr>
                     <td><strong>Όνομα:</strong></td>
-                    <td>${teacher.firstname}</td>
+                    <td>${student.firstname}</td>
                 </tr>
                 <tr>
                     <td><strong>Επώνυμο:</strong></td>
-                    <td>${teacher.lastname}</td>
+                    <td>${student.lastname}</td>
                 </tr>
                 <tr>
                     <td><strong>ΑΦΜ:</strong></td>
-                    <td>${teacher.vat}</td>
+                    <td>${student.vat}</td>
                 </tr>
                 <tr>
                     <td><strong>Επώνυμο Πατρός:</strong></td>
-                    <td>${teacher.fatherName}</td>
+                    <td>${student.fatherName}</td>
                 </tr>
                 <tr>
                     <td><strong>Τηλέφωνο:</strong></td>
-                    <td>${teacher.phoneNum}</td>
+                    <td>${student.phoneNum}</td>
                 </tr>
                 <tr>
                     <td><strong>Email:</strong></td>
-                    <td>${teacher.email}</td>
+                    <td>${student.email}</td>
                 </tr>
                 <tr>
                     <td><strong>Οδός:</strong></td>
-                    <td>${teacher.street} ${teacher.streetNum}</td>
+                    <td>${student.street} ${student.streetNum}</td>
                 </tr>
                 <tr>
                     <td><strong>ΤΚ:</strong></td>
-                    <td>${teacher.zipCode}</td>
+                    <td>${student.zipCode}</td>
                 </tr>
             </tbody>
         </table>
 
-        <!-- Επιστροφή στη λίστα καθηγητών -->
-        <a href="${pageContext.request.contextPath}/school-app/teachers/view" class="btn btn-secondary mt-4 mb-3">Επιστροφή στη Λίστα</a>
+
+        <a href="${pageContext.request.contextPath}/school-app/students/view" class="btn btn-secondary mt-4 mb-3">Επιστροφή στη Λίστα</a>
     </div>
 
     <%@ include file="footer.jsp"%>
