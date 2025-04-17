@@ -39,7 +39,7 @@
                     <td>${teacher.vat}</td>
                 </tr>
                 <tr>
-                    <td><strong>Επώνυμο Πατρός:</strong></td>
+                    <td><strong>Όνομα Πατρός:</strong></td>
                     <td>${teacher.fatherName}</td>
                 </tr>
                 <tr>

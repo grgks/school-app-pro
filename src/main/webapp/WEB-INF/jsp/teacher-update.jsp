@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Teacher Update</title>
+<title>Ενημέρωση Καθηγητή</title>
 	<link rel="stylesheet" href="${pageContext.request.contextPath}/css/teacher-update.css">
 </head>
 <body>

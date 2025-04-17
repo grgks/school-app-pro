@@ -1,4 +1,4 @@
-student<%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
+<%@ page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
        <%@ taglib prefix="c" uri="jakarta.tags.core"%>
        <%
            response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");

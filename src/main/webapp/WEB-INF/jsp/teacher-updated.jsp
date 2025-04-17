@@ -9,7 +9,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Επιτυχής Εισαγωγή</title>
+    <title>Επιτυχής Ενημέρωση</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/success.css">
 </head>
 <body>

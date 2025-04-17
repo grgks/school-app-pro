@@ -38,7 +38,7 @@
             <div class="row m-bottom">
                 <input class="m-bottom" type="text" name="vat" value="${requestScope.insertDTO.vat}" placeholder="ΑΦΜ">
                 <p class="validation-error">${sessionScope.vatMessage}</p>
-                <input class="m-bottom" type="text" name="fathername" value="${requestScope.insertDTO.fatherName}" placeholder="Επώνυμο Πατρός">
+                <input class="m-bottom" type="text" name="fathername" value="${requestScope.insertDTO.fatherName}" placeholder="Όνομα Πατρός">
                 <c:if test="${not empty sessionScope.fathernameMessage}">
                     <p class="validation-error">${sessionScope.fathernameMessage}</p>
                     <c:remove var="fathernameMessage" scope="session"/>

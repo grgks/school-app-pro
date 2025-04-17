@@ -31,9 +31,10 @@ public class CityDAOImpl implements ICityDAO {
             }
         } catch (SQLException e) {
             //e.printStackTrace();
-            JOptionPane.showMessageDialog(null,  "Select error", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Select error", "Error", JOptionPane.ERROR_MESSAGE);
             throw e;
         }
         return cities;
     }
+
 }
