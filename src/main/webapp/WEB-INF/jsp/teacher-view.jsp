@@ -58,6 +58,11 @@
                     <td><strong>ΤΚ:</strong></td>
                     <td>${teacher.zipCode}</td>
                 </tr>
+
+              <tr>
+                   <td><strong>Πόλη:</strong></td>
+                   <td>${requestScope.cityName}</td>
+              </tr>
             </tbody>
         </table>
 
