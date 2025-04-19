@@ -39,17 +39,10 @@ public class StudentUpdateController extends HttpServlet {
         List<City> cities = null;
         Integer id = Integer.parseInt(req.getParameter("id").trim());
         try {
-            cities = cityService.getAllCities();
-            StudentReadOnlyDTO studentReadOnlyDTO = studentService.getStudentById(id);
-            req.setAttribute("cities", cities);
-            if (req.getSession().getAttribute("updateDTO") != null) {
-                // Move from session to request scope for JSP
-                req.setAttribute("updateDTO", req.getSession().getAttribute("updateDTO"));
-                // Clear session data (so it doesn't persist after refresh)
-                req.getSession().removeAttribute("updateDTO");
-            } else {
-                req.setAttribute("updateDTO", studentReadOnlyDTO);
-            }
+            cities = cityService.getAllCities();  // Λαμβάνουμε τις πόλεις
+            StudentReadOnlyDTO studentReadOnlyDTO = studentService.getStudentById(id);  // Λαμβάνουμε τα στοιχεία του μαθητή
+            req.setAttribute("cities", cities);  // Περάστε τις πόλεις στη JSP
+            req.setAttribute("updateDTO", studentReadOnlyDTO);  // Περάστε τα στοιχεία του μαθητή στη JSP
             req.getRequestDispatcher("/WEB-INF/jsp/student-update.jsp").forward(req, resp);
         } catch (SQLException | StudentDAOException | StudentNotFoundException e) {
             String errorMessage = e.getMessage();
@@ -58,6 +51,7 @@ public class StudentUpdateController extends HttpServlet {
                     .forward(req, resp);
         }
     }
+
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
