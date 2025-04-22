@@ -11,7 +11,7 @@
     <div class="outer">
         <div class="items">
             <a href=""><img class="aueb-gr-logo" src="${pageContext.request.contextPath}/img/aueb_coding_factory_logo.jpg" alt=""  width="140" height="50" ></a>
-            <span class="title">Coding Factory - Education Reinvented </span>
+            <span class="title text-success">Coding Factory - Education Reinvented </span>
         </div>
         <div class="login-name">
 <%--            <span>${sessionScope.firstname}</span>--%>

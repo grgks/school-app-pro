@@ -56,6 +56,7 @@
 .title {
     font-size: 1.6rem;
     white-space: nowrap; /* δεν κάνει wrap σε δεύτερη γραμμή */
+
 }
 
 .aueb-gr-logo {
