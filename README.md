@@ -58,9 +58,9 @@ git clone https://github.com/grgks/school-app-pro.git
   ---
 2. Prerequisites
 
-Java 8+ installed
-Maven installed
-IntelliJ IDEA (recommended)
+- Java 8+ installed
+- Maven installed
+- IntelliJ IDEA (recommended)
 
 ---
 
