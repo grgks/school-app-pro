@@ -1,10 +1,28 @@
-> 🇬🇧 Scroll down for English version  
-> 🇬🇷 Δείτε παρακάτω και για την ελληνική έκδοση
+# School App Pro 🏫
 
-## 🇬🇧 English Version
+## 📌 Description
 
-School App Pro is a web-based application for managing school information. It offers features such as course viewing, user registration, student profile display, and data management through a simple web interface.
-The architecture of School App Pro follows a Service-Oriented Architecture (SOA) approach. This design allows for better modularity and separation of concerns. The backend is structured into independent services that communicate with each other through standardized interfaces (e.g., REST APIs).
+**School App Pro** is a web-based application for managing school information.  
+It offers features such as:
+
+- 📚 Course viewing  
+- 📝 User registration  
+- 👩‍🎓 Student profile display  
+- 🗂️ Data management through a simple and intuitive web interface  
+
+---
+
+## 🏗️ Architecture
+
+The architecture follows a **Service-Oriented Architecture (SOA)** approach, which promotes:
+
+- 🔧 Better modularity  
+- 🧩 Clear separation of concerns  
+- 🔄 Independent services communicating via standardized **REST APIs**
+
+This design makes the backend scalable, maintainable, and easy to extend as the system grows.
+
+---
 
 ### 🔧 Technologies
 
@@ -22,14 +40,86 @@ The architecture of School App Pro follows a Service-Oriented Architecture (SOA)
 - Web-based interface using JSP pages  
 - Client-server communication via Servlets  
 - Modular architecture powered by Maven  
-- Jetty support for local development  
+- Jetty support for local development
+- User registration and authentication
+- Course viewing and management
+- Student profile display
 
-### 🚀 Getting Started (development mode)
+### 🚀 Quick Start
 
-1. Clone the repository: git clone https://github.com/grgks/school-app-pro.git
+1. Clone the repository:
+---
+bash
+```
+git clone https://github.com/grgks/school-app-pro.git
+```
+- cd school-app-pro
 
+  ---
+2. Prerequisites
 
+Java 8+ installed
+Maven installed
+IntelliJ IDEA (recommended)
 
+---
+
+3. Build the Project
+bash : mvn clean compile
+
+---
+4. Run the Application
+bash Using Maven with Jetty : mvn jetty:run
+
+- Or using Maven with Tomcat : mvn tomcat7:run
+
+---
+5. Access the Application
+Open your browser and navigate to: ```http://localhost:8080```
+
+---
+🎯 Key Components
+
+Backend:
+
+- Servlets: Handle HTTP requests and responses
+- JSP Pages: Dynamic web content generation
+- Java Classes: Business logic and data models
+
+Frontend:
+
+- HTML/JSP: User interface templates
+- CSS: Styling and layout
+- Web Forms: User input handling
+
+🔧 Configuration
+
+- Web.xml: Servlet configuration and URL mappings
+- Maven POM: Dependencies and build configuration
+- Application Properties: Runtime configuration
+  
+---
+🧪 Testing
+
+bash:
+- Run all tests :mvn test
+
+-Run specific test class: mvn test -Dtest=TestClassName
+
+---
+📚 Usage Examples
+
+Student Management:
+
+- View student profiles
+- Register new students
+- Update student information
+
+Course Management:
+
+- Browse available courses
+- View course details
+- Manage course enrollment
 
 > ## 🇬🇷 Ελληνική έκδοση :
 > # School App Pro
@@ -60,7 +150,4 @@ The architecture of School App Pro follows a Service-Oriented Architecture (SOA)
 
 ---
 
-## 🚀 Εκκίνηση (development mode)
-
-1. Κλωνοποίησε το αποθετήριο: git clone https://github.com/grgks/school-app-pro.git
 
